@@ -1,10 +1,10 @@
 package com.example.restapp;
 
 public class Student {
-    final long id;
-    final String name;
-    final String number;
-    final String grupa;
+    public final long id;
+    public final String name;
+    public final String number;
+    public final String grupa;
 
 
     public Student(long id, String name, String number, String grupa) {

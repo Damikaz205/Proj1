@@ -1,6 +1,7 @@
 package com.example.restapp;
 
 import io.vavr.collection.List;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 public class StudentService {
     List<Student> students = List.empty();
