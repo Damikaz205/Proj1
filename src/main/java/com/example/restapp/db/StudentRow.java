@@ -1,12 +1,27 @@
 package com.example.restapp.db;
 
+import com.example.restapp.Student;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class StudentRow {
 
-    @Id private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    protected StudentRow(){}
+
+    public StudentRow(String name, String number, String group1) {
+        this.name = name;
+        this.number = number;
+        this.group1 = group1;
+    }
+
     private String name;
     private String number;
     private String group1;

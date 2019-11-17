@@ -9,7 +9,7 @@ public class NewStudent {
     final String grupa;
 
     @JsonCreator
-    public NewStudent(@JsonProperty("name") String name, @JsonProperty("numer") String numer, @JsonProperty("grupa") String grupa) {
+    public NewStudent(@JsonProperty("name") String name, @JsonProperty("number") String numer, @JsonProperty("group1") String grupa) {
         this.name = name;
         this.numer = numer;
         this.grupa = grupa;
