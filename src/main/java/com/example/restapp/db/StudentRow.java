@@ -57,4 +57,12 @@ public class StudentRow {
     public void setGroup1(String group1) {
         this.group1 = group1;
     }
+
+    public Student toStudent(){
+        return new Student(
+                this.getId(),
+                this.getName(),
+                this.getNumber(),
+                this.getGroup1());
+    }
 }
