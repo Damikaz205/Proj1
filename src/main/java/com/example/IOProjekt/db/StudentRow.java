@@ -2,10 +2,8 @@ package com.example.restapp.db;
 
 import com.example.restapp.Student;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class StudentRow {
@@ -14,7 +12,11 @@ public class StudentRow {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    protected StudentRow(){}
+    @OneToMany(mappedBy = "student")
+    private Set<ScoreRow> scores;
+
+    protected StudentRow() {
+    }
 
     public StudentRow(String name, String number, String group1) {
         this.name = name;
@@ -58,11 +60,19 @@ public class StudentRow {
         this.group1 = group1;
     }
 
-    public Student toStudent(){
+    public Student toStudent() {
         return new Student(
                 this.getId(),
                 this.getName(),
                 this.getNumber(),
                 this.getGroup1());
+    }
+
+    public Set<ScoreRow> getScores() {
+        return scores;
+    }
+
+    public void setScores(Set<ScoreRow> scores) {
+        this.scores = scores;
     }
 }
